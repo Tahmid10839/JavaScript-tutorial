@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If, Else & Switch</title>
+</head>
+<body>
+
+    <script>
+        const age = 19;
+        if (age==19){
+            console.log('Age is 19');
+        }
+        else if(age==30){
+            console.log('Age is 30');
+        }
+        else{
+            console.log('Age is not 19');
+        }
+
+        const age2 = '35';
+        if(age2===35){    //=== check value with type
+            console.log('Age is 35');
+        }
+        else if(age2!==35){
+            console.log('Age is not 35');
+        } 
+        else{
+            console.log('Age is not 35');
+        }
+
+        // const vari=20;
+        if(typeof vari !='undefined'){
+            console.log('vari is defined');
+        }
+        else{
+            console.log('vari is not defined');
+        }
+
+        const doesdrive = true;
+        if(doesdrive && age>18){
+            console.log('You can drive');
+        }
+        else if(doesdrive || age>18){
+            console.log('You can drive');
+        }
+        else{
+            console.log('You can not drive');
+        }
+
+        // Ternary Operator
+        console.log(age==19?'Age is 19':'Age is not 19');
+
+        switch (age) {
+            case 19:
+                console.log('Age is 19');
+                break;
+            case 20:
+                console.log('Age is 20');
+                break;
+            default:
+                console.log('Age is unknown');
+                break;
+        }
+    </script>
+    
+</body>
+</html>

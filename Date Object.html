@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Object</title>
+</head>
+<body>
+    <div class="container">
+        <!-- comment -->
+        <h1 id="heading" class="head this is">Welcome to Website</h1>
+        <div class="child red" id="myfirst">Child 1
+            <ul class="this" id="myul">
+                <li class="list" id="ful">This</li>
+                <li class="list">is</li>
+                <li class="list" id="lul">List</li>
+            </ul>
+
+        </div>
+        <div class="child2">Child 2</div>
+        <div class="child red">Child 3</div>
+        <div class="child">Child 4</div>
+        <form action="">
+            <a href="//google.com">Google</a><br>
+            <label for="">Enter your name:</label>
+            <input type="text">
+            <input type="submit" id="btn" value="submit">
+        </form>
+    </div>
+    <script>
+        let today = new Date();
+        console.log(today);
+        console.log(typeof(today));
+
+        let otherdate = new Date('7-9-1998 5:00:08');
+        console.log(otherdate);
+        otherdate = new Date('7-9-1998');
+        console.log(otherdate);
+        otherdate = new Date('7/9/1998');
+        console.log(otherdate);
+        console.log(otherdate.getDay());
+        console.log(otherdate.getDate());
+        console.log(otherdate.getMonth());
+        od = new Date();
+        console.log(od.getHours());
+        console.log(od.getMinutes());
+        console.log(od.getSeconds());
+        console.log(od.getTime());
+        console.log(od.getMilliseconds());
+        otherdate.setDate(20);
+        otherdate.setMonth(2);
+        otherdate.setFullYear(1998);
+        otherdate.setHours(1);
+        otherdate.setMinutes(2);
+        otherdate.setSeconds(3);
+        console.log(otherdate);
+    </script>
+</body>
+</html>

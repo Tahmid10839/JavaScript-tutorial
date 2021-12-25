@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Inheritance</title>
+</head>
+<body>
+    <div class="container">
+        <!-- comment -->
+        <h1 id="heading" class="head this is">Welcome to Website</h1>
+        <div class="child red" id="myfirst">Child 1
+            <ul class="this" id="myul">
+                <li class="list" id="ful">This</li>
+                <li class="list">is</li>
+                <li class="list" id="lul">List</li>
+            </ul>
+
+        </div>
+        <div class="child2">Child 2</div>
+        <div class="child red">Child 3</div>
+        <div class="child">Child 4</div>
+        <form action="">
+            <a href="//google.com">Google</a><br>
+            <label for="">Enter your name:</label>
+            <input type="text">
+            <input type="submit" id="btn" value="submit">
+        </form>
+    </div>
+    <script>
+        const proto = {
+            slogan: function(){
+                return `This company is the best`;
+            },
+            changeName: function(newName){
+                this.name = newName;
+            }
+        }
+
+        // This creates tahmid object 
+        // const tahmid = Object.create(proto);
+        // tahmid.name = "Tahmid";
+        // tahmid.role = "Programmer";
+        // tahmid.changeName("Tahmid2");
+        // console.log(tahmid);
+
+        // This also creates tahmid object 
+        const tahmid = Object.create(proto,{
+            name: {value: "Tahmid", writable: true},
+            role: {value: "Programmer"}
+        })
+        tahmid.changeName("Tahmid2");
+        console.log(tahmid);
+
+        // Employee Constructor
+        function Employee(name,salary,exp){
+            this.name = name;
+            this.salary = salary;
+            this.exp = exp;
+        }
+        Employee.prototype.slogan = function(){
+            return `This company is the best. Regards, ${this.name}`;
+        }
+        let tahmidObj = new Employee("Tahmid",25000,5);
+        console.log(tahmidObj);
+        console.log(tahmidObj.slogan());
+
+        // Programmer Constructor 
+        function Programmer(name,salary,exp,ln){
+            Employee.call(this,name,salary,exp);
+            this.ln = ln;
+        }
+        // Inherit the prototype 
+        Programmer.prototype = Object.create(Employee.prototype);
+        // Manually set the constructor 
+        Programmer.prototype.constructor = Programmer;
+
+        let rahim = new Programmer("Rahim",2000,6,"JS");
+        console.log(rahim);
+        console.log(rahim.slogan());
+        
+    </script>
+</body>
+</html>

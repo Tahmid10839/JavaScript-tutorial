@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children, Parent and Traversing the DOM</title>
+</head>
+<body>
+    <div class="container">
+        <!-- comment -->
+        <h1 id="heading">Welcome to Website</h1>
+        <div class="child red" id="myfirst">Child 1
+            <ul class="this">
+                <li class="list">This</li>
+                <li class="list">is</li>
+                <li class="list">List</li>
+            </ul>
+
+        </div>
+        <div class="child">Child 2</div>
+        <div class="child red">Child 3</div>
+        <div class="child">Child 4</div>
+        <form action="">
+            <a href="//google.com">Google</a><br>
+            <label for="">Enter your name:</label>
+            <input type="text">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+
+    <script>
+        let cont = document.querySelector('.container');
+        console.log(cont);
+        console.log(cont.childNodes);
+        console.log(cont.children);
+        console.log(cont.childNodes[3].nodeName);
+        console.log(cont.childNodes[3].nodeType);
+
+        // NodeTypes
+        // 1. Element
+        // 2. Attribute
+        // 3. Text Node
+        // 8. Comment
+        // 9. document
+        // 10.docType
+        
+        console.log(cont.children);
+        console.log(cont.children[1]);
+        console.log(cont.children[1].children);
+        console.log(cont.children[1].children[0]);
+        console.log(cont.children[1].children[0].children);
+        console.log(cont.children[1].children[0].children[0]);
+        
+        console.log(cont.firstChild);
+        console.log(cont.firstElementChild);
+        console.log(cont.lastChild);
+        console.log(cont.lastElementChild);
+
+        console.log(cont.childElementCount);
+
+        console.log(cont.firstElementChild.parentNode);
+        console.log(cont.firstElementChild.nextSibling);
+        console.log(cont.firstElementChild.nextElementSibling);
+        console.log(cont.firstElementChild.nextElementSibling.nextElementSibling);
+    </script>
+    
+</body>
+</html>

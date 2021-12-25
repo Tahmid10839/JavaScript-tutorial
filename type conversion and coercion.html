@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Conversion & Coercion</title>
+</head>
+<body>
+
+    <script>
+
+        // Type Conversion
+        let myvar = String(34);
+        console.log(myvar,(typeof myvar));
+
+        let bvar = String(true);
+        console.log(bvar,(typeof bvar));
+
+        let date = String(new Date());
+        console.log(date,(typeof date));
+
+        let arr = String([1,2,3,4,5]);
+        console.log(arr.length,(typeof arr));
+
+        let i =45;
+        console.log(i.toString());
+
+        let str = Number("345");
+        let bvar2 = Number(true);
+        let arr2 = Number([1,2,3,4,5]);
+        console.log(str,(typeof str));
+        console.log(bvar2,(typeof bvar2));
+        console.log(arr2,(typeof arr2));
+
+        let num = parseFloat('34.098');
+        console.log(num.toFixed(2),num.toPrecision(3),(typeof num));
+
+        // Type Coercion
+
+        let num3 = "356";
+        let num4 = 50;
+        console.log(num3 + num4);
+        
+        let num5 = Number("356");
+        let num6 = 50;
+        console.log(num5 + num6);
+
+
+    </script>
+    
+</body>
+</html>

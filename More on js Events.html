@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events and Event Object</title>
+</head>
+<body>
+    <div class="container">
+        <!-- comment -->
+        <h1 id="heading" class="head this is">Welcome to Website</h1>
+        <div class="child red" id="myfirst">Child 1
+            <ul class="this" id="myul">
+                <li class="list" id="ful">This</li>
+                <li class="list">is</li>
+                <li class="list" id="lul">List</li>
+            </ul>
+
+        </div>
+        <div class="child2">Child 2</div>
+        <div class="child red">Child 3</div>
+        <div class="child">Child 4</div>
+        <form action="">
+            <a href="//google.com">Google</a><br>
+            <label for="">Enter your name:</label>
+            <input type="text">
+            <input type="submit" id="btn" value="submit">
+        </form>
+    </div>
+
+
+    <script>
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click',func1);
+        btn.addEventListener('dblclick',func2);
+        btn.addEventListener('mousedown',func3);
+        function func1(e){
+            console.log("Thanks",e);
+            e.preventDefault();
+        }
+        function func2(e){
+            console.log("Its a double click",e);
+            e.preventDefault();
+        }
+        function func3(e){
+            console.log("Its a mouse down",e);
+            e.preventDefault();
+        }
+        document.querySelector('.child2').addEventListener('mouseenter',function(){
+            console.log('You Entered child 2');
+        });
+        document.querySelector('.child2').addEventListener('mouseleave',function(){
+            console.log('You Exited child 2');
+        });
+        document.querySelector('.container').addEventListener('mousemove',function(e){
+            document.body.style.backgroundColor = `rgb(${e.offsetX},${e.offsetY},55)`;
+        });
+    </script>
+    
+</body>
+</html>

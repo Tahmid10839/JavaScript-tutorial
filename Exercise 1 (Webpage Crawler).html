@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise - 1 | Webpage Crawler</title>
+</head>
+<body>
+    <a href="//google.com">Google.com</a>
+    <a href="//tahmid.com/Tahmid-python">Nazre Imam Tahmid</a>
+    <a href="//rahim.com/Rahim-python">Nazre Imam Tahmid</a>
+    
+
+    <script>
+        let links = document.links;
+        let text = 'tahmid';
+        console.log(links);
+        // Array.from(links).forEach(function(element){
+        //     let href = element.href;
+        //     if(href.includes(text)){
+        //         console.log(href);
+        //     }
+        // });
+
+        for(let i=0;i<links.length;i++){
+            if(links[i].href.includes(text)){
+                console.log(links[i].href);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating,Removing and Replacing Elements</title>
+</head>
+<body>
+    <div class="container">
+        <!-- comment -->
+        <h1 id="heading">Welcome to Website</h1>
+        <div class="child red" id="myfirst">Child 1
+            <ul class="this" id="myul">
+                <li class="list" id="ful">This</li>
+                <li class="list">is</li>
+                <li class="list" id="lul">List</li>
+            </ul>
+
+        </div>
+        <div class="child">Child 2</div>
+        <div class="child red">Child 3</div>
+        <div class="child">Child 4</div>
+        <form action="">
+            <a href="//google.com">Google</a><br>
+            <label for="">Enter your name:</label>
+            <input type="text">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+
+    <script>
+        let element = document.createElement('li');
+        let text = document.createTextNode("I am a text node");
+        element.className = "list";
+        element.id = "idli";
+        element.setAttribute('title','mytitle');
+        element.appendChild(text);
+        // element.innerHTML = "<b>This list is created by js";
+
+        let ul = document.querySelector('ul.this');
+        ul.appendChild(element);
+
+        console.log(element);
+
+        let elem2 = document.createElement('h3');
+        let text2 = document.createTextNode('This is element 2');
+        elem2.className = "elem2";
+        elem2.id = "elem2";
+        elem2.appendChild(text2);
+        element.replaceWith(elem2);
+
+        let myul = document.getElementById('myul');
+        myul.replaceChild(element,document.getElementById('ful'));
+        myul.removeChild(document.getElementById("lul"));
+
+        console.log(elem2.getAttribute('class'));
+        console.log(elem2.getAttribute('id'));
+        console.log(elem2.hasAttribute('class'));
+        console.log(elem2.hasAttribute('href'));
+        elem2.removeAttribute('id')
+        console.log(elem2);
+        elem2.setAttribute('title','myelem2title');
+        console.log(elem2);
+
+        let heading = document.createElement('h1');
+        // let text3 = document.createTextNode("I am Tahmid");
+        
+        heading.innerHTML = "<a href='https://www.google.com'>I am Tahmid</a>";
+        // heading.setAttribute('href','https://www.google.com');
+        // heading.appendChild(text3);
+        ul.appendChild(heading);
+        console.log(heading);
+    </script>
+    
+</body>
+</html>

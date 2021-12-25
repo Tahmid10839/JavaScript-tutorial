@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+
+<body onload="updateClock(); setInterval('updateClock()',1000)">
+
+    <div id="clock">
+        <div></div>
+    </div>
+
+    <script>
+        function updateClock() {
+            let ct = new Date();
+
+            let ch = ct.getHours();
+            let cm = ct.getMinutes();
+            let cs = ct.getSeconds();
+
+            let timeofDay = (ch < 12) ? "AM" : "PM";
+            cm = (cm < 10 ? "0" : "") + cm;
+            cs = (cs < 10 ? "0" : "") + cs;
+
+            ch = ch > 12 ? ch - 12 : ch;
+            ch = ch == 12 ? 0 : ch;
+
+            let str = ch + ":" + cm + ":" + cs + " " + timeofDay;
+
+            document.getElementById("clock").innerHTML = str;
+        }
+    </script>
+</body>
+
+</html>

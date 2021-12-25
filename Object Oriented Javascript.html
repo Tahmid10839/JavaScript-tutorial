@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented Javascript</title>
+</head>
+<body>
+    <div class="container">
+        <!-- comment -->
+        <h1 id="heading" class="head this is">Welcome to Website</h1>
+        <div class="child red" id="myfirst">Child 1
+            <ul class="this" id="myul">
+                <li class="list" id="ful">This</li>
+                <li class="list">is</li>
+                <li class="list" id="lul">List</li>
+            </ul>
+
+        </div>
+        <div class="child2">Child 2</div>
+        <div class="child red">Child 3</div>
+        <div class="child">Child 4</div>
+        <form action="">
+            <a href="//google.com">Google</a><br>
+            <label for="">Enter your name:</label>
+            <input type="text">
+            <input type="submit" id="btn" value="submit">
+        </form>
+    </div>
+    <script>
+        // Object Literal for creating object 
+        let car = {
+            name: "Maruti 800",
+            topSpeed: 80,
+            run: function() {
+                console.log('Car is running');
+            }
+        }
+
+        // Creating a constructor for cars 
+        function generalcar(givenName,givenSpeed) {
+            this.name = givenName;
+            this.topSpeed = givenSpeed;
+            this.run = function() {
+                console.log(`${this.name} is running`);
+            }
+            this.analyze = function(){
+                console.log(`It is slower by ${200-this.topSpeed} KM/H than Mercedes`);
+            }
+        }
+        car1 = new generalcar("Nissan",180);
+        car2 = new generalcar("Maruti",150);
+        console.log(car1);
+        console.log(car2);
+    </script>
+</body>
+</html>

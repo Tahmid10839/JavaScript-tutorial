@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local and Session Storage</title>
+</head>
+<body>
+    <div class="container">
+        <!-- comment -->
+        <h1 id="heading" class="head this is">Welcome to Website</h1>
+        <div class="child red" id="myfirst">Child 1
+            <ul class="this" id="myul">
+                <li class="list" id="ful">This</li>
+                <li class="list">is</li>
+                <li class="list" id="lul">List</li>
+            </ul>
+
+        </div>
+        <div class="child2">Child 2</div>
+        <div class="child red">Child 3</div>
+        <div class="child">Child 4</div>
+        <form action="">
+            <a href="//google.com">Google</a><br>
+            <label for="">Enter your name:</label>
+            <input type="text">
+            <input type="submit" id="btn" value="submit">
+        </form>
+    </div>
+
+
+    <script>
+
+        // Add a key value pairs inside local storage
+        localStorage.setItem('Name','Tahmid');
+        localStorage.setItem('Name2','Rahim');
+
+        // Clear the entire local storage
+        // localStorage.clear();
+
+        //Remove the particular key value pair
+        // localStorage.removeItem('Name2');
+
+        let name = localStorage.getItem('Name');
+        console.log(name);
+
+        let arr = ['orange','apple','mango'];
+        localStorage.setItem('Fruit',JSON.stringify(arr));
+        console.log(JSON.parse(localStorage.getItem('Fruit')));
+
+        sessionStorage.setItem('sName','Tahmid');
+        sessionStorage.setItem('sName2','Rahim');
+        sessionStorage.setItem('sFruit',JSON.stringify(arr));
+    </script>
+    
+</body>
+</html>

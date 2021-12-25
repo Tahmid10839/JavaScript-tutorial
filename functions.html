@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+        function greet(name,thank='Thank You'){
+            console.log(`Hello ${name} Dolore aliquyam labore ea ipsum sadipscing et dolores, ut et est sit sed dolor et no, voluptua stet labore ipsum. ${thank}`);
+            return 3;
+        }
+
+        let name = 'Tahmid';
+        let val = greet(name,'Thanks a lot');
+        console.log(val);
+        let val2 = greet(name);
+        console.log(val2);
+
+        const myobj = {
+            name:'Tahmid',
+            game: function (){
+                return "GTA V";
+            }
+        }
+        console.log(myobj.name);
+        console.log(myobj.game());
+
+        arr = ['Orange','Apple'];
+        arr.forEach(function(element,index,array) {
+               console.log(element,index,array);
+        });
+
+        var i = 10;
+        function fun(){
+            let i = 20;
+            console.log(i);
+            return 'Tahmid';
+        }
+        console.log(fun(),i);
+
+    </script>
+    
+</body>
+</html>
